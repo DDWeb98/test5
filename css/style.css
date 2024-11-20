@@ -441,11 +441,17 @@ a:focus {
 
 /* Stile per i titoli */
 .heading_container h2 {
-  font-size: 36px; /* Dimensione del titolo principale */
+  font-size: 2rem; /* Dimensione del titolo principale */
   font-weight: bold; /* Grassetto */
   text-align: center; /* Centra il titolo */
   margin-bottom: 30px; /* Margine sotto il titolo */
   color: #333; /* Colore del testo */
+}
+
+@media (max-width: 576px) {
+  .heading_container h2 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Dettagli della sezione */
