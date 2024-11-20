@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Democrazia cristiana storica</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link href="css/style_1.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .video {
+      margin: 15px 0;
+    }
+    .video iframe {
+      width: 350px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+      <!-- Il resto della sezione header -->
+    </header>
+  </div>
+
+  <br><br>
+
+  <div class="section-header text-center">
+    <div class="video-container" id="videoContainer">
+      <!-- I video saranno inseriti qui tramite JavaScript -->
+    </div>
+  </div>
+
+  <!-- Script per inserire automaticamente i video in cima -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    // Array di URL dei video
+    const videoUrls = [
+      "https://www.youtube.com/embed/W4ZDVSpkpKA",
+      "https://www.youtube.com/embed/Dj7hT89Ek6k",
+      "https://www.youtube.com/embed/EQbc2XF1irc",
+      "https://www.youtube.com/embed/6C3Eq9OXtm0",
+      "https://www.youtube.com/embed/75fQg3849nw",
+      "https://www.youtube.com/embed/MqN-Ydi2ytc",
+      "https://www.youtube.com/embed/iw5NmTwZgWg",
+      "https://www.youtube.com/embed/Chh7ZpFl1uc",
+      "https://www.youtube.com/embed/i-TUq06iYQg",
+      "https://www.youtube.com/embed/NYXXWXzyXOg",
+      // Aggiungi altri URL qui...
+    ];
+
+    // Funzione per aggiungere un video in cima
+    function addVideo(url) {
+      const videoContainer = $('#videoContainer');
+      const newVideo = $(`
+        <div class="video">
+          <iframe src="${url}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      `);
+      videoContainer.prepend(newVideo); // Inserisce il nuovo video in cima
+    }
+
+    // Aggiunge tutti i video in cima
+    $(document).ready(function() {
+      videoUrls.forEach(url => {
+        addVideo(url);
+      });
+    });
+  </script>
+</body>
+</html>
